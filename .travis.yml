@@ -18,6 +18,7 @@ matrix:
       env: SYMFONY_VERSION='2.5.*'
 
 before_script:
+  - curl -O https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.7.1.deb && sudo dpkg -i --force-confnew elasticsearch-1.7.1.deb
   - /usr/share/elasticsearch/bin/elasticsearch -v
   - sudo /usr/share/elasticsearch/bin/plugin -install elasticsearch/elasticsearch-mapper-attachments/2.0.0
   - sudo service elasticsearch restart
